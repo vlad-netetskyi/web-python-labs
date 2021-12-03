@@ -1,0 +1,63 @@
+{% extends "parent.html" %}
+
+{%block title%}
+Flask start
+{% endblock %}
+
+{%block content%}
+
+<div class="form" style="height: 500px">
+    <ul>
+        <li>
+            Login: 
+            <b>
+            {{ form.login.data }}
+            </b>
+        </li>
+        <li>
+            Password: 
+            <b>
+            {{ form.password.data }}
+            </b>
+        </li>
+        <li>
+            Password confirm: 
+            <b>
+            {{ form.password_confirm.data }}
+            </b>
+        </li>
+        <h1>Examenation list</h1>
+        <li>
+            Number: 
+            <b>
+            {{ form.e_l_number.data }}
+            </b>
+        </li>
+        <li>
+            PIN: 
+            <b>
+            {{ form.e_l_pin.data }}
+            </b>
+        </li>
+        <li>
+            Year: 
+            <b>
+            {{ form.e_l_year.data }}
+            </b>
+        </li>
+        <h1>Document about education</h1>
+        <li>
+            Series: 
+            <b>
+            {{ form.d_f_e_series.data }}
+            </b>
+        </li>
+        <li>
+            Number: 
+            <b>
+            {{ form.d_f_e_number.data }}
+            </b>
+        </li>
+    </ul>
+</div>
+{% endblock %}
