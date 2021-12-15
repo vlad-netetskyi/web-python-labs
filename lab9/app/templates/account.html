@@ -1,0 +1,9 @@
+{% extends 'parent.html' %}
+
+{%block title%}
+{{user.username}}
+{% endblock %}
+
+{%block content%}
+<h2>This is account of user {{user.username}}: [{{user.email}}]</h2>
+{% endblock %}
