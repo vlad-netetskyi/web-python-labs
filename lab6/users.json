@@ -1,0 +1,42 @@
+{
+    "123456": {
+        "password": "123123123",
+        "Examenation list number": "1231233",
+        "Examenation list PIN": "1231",
+        "Examenation list year": "2014",
+        "Document education series": "C12",
+        "Document education number": "1234567"
+    },
+    "vlad.netet123123@gmail.com": {
+        "password": "1234567",
+        "Examenation list number": "1234567",
+        "Examenation list PIN": "1234",
+        "Examenation list year": "2016",
+        "Document education series": "C12",
+        "Document education number": "1234567as"
+    },
+    "vlad.netetsdasasdasd@gmail.com": {
+        "password": "1234567",
+        "Examenation list number": "1234567",
+        "Examenation list PIN": "1234",
+        "Examenation list year": "2014",
+        "Document education series": "AZ",
+        "Document education number": "12341234"
+    },
+    "vlad.ne@gmail.com": {
+        "password": "123123",
+        "Examenation list number": "1231233",
+        "Examenation list PIN": "1234",
+        "Examenation list year": "2014",
+        "Document education series": "CC",
+        "Document education number": "12341234"
+    },
+    "vlad.netet444322@gmail.com": {
+        "password": "12345678",
+        "Examenation list number": "1231231",
+        "Examenation list PIN": "1234",
+        "Examenation list year": "2014",
+        "Document education series": "AZ",
+        "Document education number": "12345678"
+    }
+}
