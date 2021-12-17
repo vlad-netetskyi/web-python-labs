@@ -1,0 +1,34 @@
+{% from "_render_field.html" import render_field %}
+{% extends "parent.html" %}
+
+{%block title%}
+Form!
+{% endblock %}
+
+{%block content %}
+<div class="form_second">
+    <h1>Login form:</h1>
+    <form method="POST" action="{{ url_for('form_second') }}">
+        {{ form.csrf_token }}
+        
+        {{ render_field(form.login, value=login) }}
+        {{ render_field(form.password) }}
+        {{ render_field(form.password_confirm) }}
+
+        <h1>Examenation list</h1>
+
+        {{ render_field(form.e_l_number, value=e_l_number) }}
+        {{ render_field(form.e_l_pin) }}
+        {{ render_field(form.e_l_year) }}
+
+        <h1>Document about education</h1>
+        
+        {{ render_field(form.d_f_e_series) }}
+        {{ render_field(form.d_f_e_number) }}
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
+
+
