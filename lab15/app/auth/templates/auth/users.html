@@ -1,0 +1,20 @@
+{% extends "parent.html" %}
+
+{%block title%}
+All users
+{% endblock %}
+
+{%block content %}
+<ul class="list-group w-50 m-auto">
+    <li class="list-group-item active">Count of all users: {{count}}</li>
+{% for user in all_users %}
+    <li class="list-group-item d-flex p-2 flex-row justify-content-between p-x-right-3">
+        <div class="">{{ user.id }}:  {{user.username}}</div> 
+
+        <div class="">{{user.email}}</div>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+
