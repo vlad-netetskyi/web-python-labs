@@ -1,0 +1,34 @@
+{% from "_render_field.html" import render_field %}
+
+{% extends 'parent.html' %}
+
+{% block title %}
+Create new post
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/post.css') }}">
+
+<form method="POST" enctype="multipart/form-data" class="post_create">
+    {{ form.csrf_token }}
+    <div class="post_create_container">
+
+        <div class="form-group">
+            {{ render_field(form.title, class='form-control') }}
+        </div>
+        <div class="form-group form-group-long">
+            {{ render_field(form.description, class='form-control') }}
+        </div>
+        <div class="form-group ">
+            {{ render_field(form.image, class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.type, class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.submit, value='Create!', class='btn btn-primary') }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}
