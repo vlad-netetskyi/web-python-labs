@@ -1,0 +1,48 @@
+{% from "_render_field.html" import render_field %}
+{% extends 'parent.html' %}
+
+{% block title %}
+View post.title post
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/post.css') }}">
+<div class="post_main_details">
+    <div class="item-post">
+        <img src="{{ image }}" width="300px">
+        <p class="post_main_title">
+            {{ teacher.first_name }}
+        </p>
+        <p class="post_main_title">
+            {{ teacher.last_name }}
+        </p>
+        <p class="post_main_title">
+            {{ teacher.surname }}
+        </p>
+        <hr>
+        <p class="post_description">
+
+        </p>
+        <hr>
+        <div class="post_main_addinfo">
+            <span class="post_type">
+                Position: {{ teacher.position.name }}
+            </span>
+            <span class="post_date">
+                Start work at: {{ teacher.start_work }}
+            </span>
+        </div>
+        <hr>
+
+    </div>
+    <div class="post_buttons">
+        <a href="{{ url_for('teacher.delete_post', postId=teacher.id) }}">
+            <button class="btn btn-danger">Delete</button>
+        </a>
+        <a href="{{ url_for('teacher.update_post', postId=teacher.id) }}">
+            <button class="btn btn-primary"> Edit </button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

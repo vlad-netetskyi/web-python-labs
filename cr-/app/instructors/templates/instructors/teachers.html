@@ -1,0 +1,38 @@
+{% from "_render_field.html" import render_field %}
+{% extends 'parent.html' %}
+
+{% block title %}
+Posts
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/post.css') }}">
+<div class="post_container row">
+    {% for teacher in teachers %}
+    <a href="{{ url_for('teacher.view', postId=teacher.id) }}" class="post col col-sm-2">
+
+        <div class="post_detail">
+            <div class="post_text">
+                <span class="post_title">
+                    First Name: {{ teacher.first_name }}
+                </span>
+                <span class="post_title">
+                    Last Name: {{ teacher.last_name }}
+                </span>
+                <span class="post_title">
+                    Surname: {{ teacher.surname }}
+                </span>
+            </div>
+            <div class="post_addinfo">
+                <span class="post_type">
+                    {{ get_category_name(teacher.position_id) }}
+                </span>
+                <span class="post_date">
+                    {{ teacher.start_work }}
+                </span>
+            </div>
+        </div>
+        {% endfor %}
+    </a>
+</div>
+{% endblock %}
