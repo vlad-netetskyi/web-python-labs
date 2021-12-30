@@ -1,0 +1,35 @@
+{% from "_render_field.html" import render_field %}
+{% extends 'parent.html' %}
+
+{% block title %}
+Posts
+{% endblock %}
+
+{% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/post.css') }}">
+<div class="post_container row">
+    {% for p in posts %}
+    <a href="{{ url_for('post.view', postId=p.id) }}" class="post col col-sm-2">
+        <div class="post_image" style="background-image: url({{ image }}/{{ p.image }});"></div>
+        <div class="post_detail">
+            <div class="post_text">
+                <span class="post_title">
+                    {{ p.title }} 
+                </span>
+                <span class="post_description">
+                    {{ slice_post_text(p.description) }}
+                </span>
+            </div>
+            <div class="post_addinfo">
+                <span class="post_type">
+                    {{ get_category_name(p.category_id) }}
+                </span>
+                <span class="post_date">
+                    {{ p.created }}
+                </span>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
