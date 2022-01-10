@@ -1,0 +1,31 @@
+{% extends 'parent.html' %}
+{% from "_render_field.html" import render_field %}
+
+{%block title%}
+{{user.username}}
+{% endblock %}
+
+{%block content%}
+<div class="content-section">
+    <div class="media">
+        <img src="{{ image }}" align="middle" class="rounded-circle account-img" style="width: 200px" />
+    </div> 
+    <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary"> {{ user.email }} </p>
+    </div>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ render_field(form.email, class='form-control', placeholder='Enter email') }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.username, class='form-control', placeholder='Enter username') }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.picture, class='form-control') }}
+        </div>
+        {{ render_field(form.submit, class='btn btn-primary', value='Update') }}
+    </form>
+</div>
+{% endblock %}
